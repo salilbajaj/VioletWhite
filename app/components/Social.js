@@ -77,7 +77,8 @@ class Social extends Component {
         page:1,      
       drawer: "Closed",
       newDataReceived:false,
-      refreshing:false
+      refreshing:false,
+      recData:[]
     };
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
     this.endFunction = this.endFunction.bind(this);
@@ -88,7 +89,7 @@ class Social extends Component {
       this.getFeed()
     }
     if (event.type == "NavBarButtonPress") {
-      if (event.id == "drawer-btn") {
+    
         
         
         this.props.navigator.toggleDrawer({
@@ -96,7 +97,7 @@ class Social extends Component {
           animated: true,
          
         });
-      }
+      
     }
   }
   drawerState() {
@@ -341,9 +342,10 @@ class Social extends Component {
         }
       })
       .then(result => {
-      
+     
         if(result && result.length>0){
          if(this.state.page==1){
+     
          this.setState({
            recData:result,
            loading:false,
@@ -373,7 +375,9 @@ class Social extends Component {
           })
         }
       })
-      .catch(err => {});
+      .catch(err => {
+        
+      });
   }
   loginResult(result) {
     if (result) {

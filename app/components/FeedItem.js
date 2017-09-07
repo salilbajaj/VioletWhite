@@ -24,6 +24,10 @@ var TimeAgo = require('react-native-timeago');
 class FeedItem extends Component{
   constructor(props){
     super(props)
+    
+    this.state={
+      videoId:null
+    }
   }
   imgOrVid(data){
       if(data.type=="image"){
