@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 var App = require('./app/App');
-export default class AwesomeProject extends Component {
+export default class GoVioletWhite extends Component {
   render() {
     return (
       <App />
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('GoVioletWhite', () => GoVioletWhite);

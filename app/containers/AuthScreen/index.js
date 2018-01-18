@@ -1,17 +1,26 @@
-import React, { Component } from 'react'
-import { KeyboardAvoidingView, LayoutAnimation, Platform, StyleSheet, UIManager } from 'react-native'
-import { Image, View } from 'react-native-animatable'
+import React, { Component } from "react";
 
-import imgLogo from '../../assets/images/logo.png'
-import metrics from '../../config/metrics';
-import Constants from '../../common/Constants';
-import Opening from './Opening'
-import SignupForm from './SignupForm'
-import LoginForm from './LoginForm'
+import {
+  KeyboardAvoidingView,
+  LayoutAnimation,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  UIManager
+} from "react-native";
+import { Image, View } from "react-native-animatable";
 
-const IMAGE_WIDTH = metrics.DEVICE_WIDTH * 0.8
+import imgLogo from "../../assets/images/logo.png";
+import metrics from "../../config/metrics";
+import Constants from "../../common/Constants";
+import Opening from "./Opening";
+import SignupForm from "./SignupForm";
+import LoginForm from "./LoginForm";
 
-if (Platform.OS === 'android') UIManager.setLayoutAnimationEnabledExperimental(true)
+const IMAGE_WIDTH = metrics.DEVICE_WIDTH * 0.8;
+
+if (Platform.OS === "android")
+  UIManager.setLayoutAnimationEnabledExperimental(true);
 
 /**
  * The authentication screen.
@@ -42,110 +51,113 @@ if (Platform.OS === 'android') UIManager.setLayoutAnimationEnabledExperimental(t
  *   2. fadeOut the logo, 3. tells the container that the login animation has completed and that the app is ready to show the next screen (HomeScreen).
  */
 export default class AuthScreen extends Component {
-  
-
   state = {
     visibleForm: null // Can be: null | SIGNUP | LOGIN
-  }
+  };
 
-  componentWillUpdate (nextProps) {
+  componentWillUpdate(nextProps) {
     // If the user has logged/signed up succesfully start the hide animation
     if (!this.props.isLoggedIn && nextProps.isLoggedIn) {
-      this._hideAuthScreen()
+      this._hideAuthScreen();
     }
   }
 
   _hideAuthScreen = async () => {
     // 1. Slide out the form container
-    await this._setVisibleForm(null)
+    await this._setVisibleForm(null);
     // 2. Fade out the logo
-    await this.logoImgRef.fadeOut(800)
+    await this.logoImgRef.fadeOut(800);
     // 3. Tell the container (app.js) that the animation has completed
-    this.props.onLoginAnimationCompleted()
-  }
+    this.props.onLoginAnimationCompleted();
+  };
 
-  _setVisibleForm = async (visibleForm) => {
+  _setVisibleForm = async visibleForm => {
     // 1. Hide the current form (if any)
     if (this.state.visibleForm && this.formRef && this.formRef.hideForm) {
-      await this.formRef.hideForm()
+      await this.formRef.hideForm();
     }
     // 2. Configure a spring animation for the next step
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
     // 3. Set the new visible form
-    this.setState({ visibleForm })
-  }
+    this.setState({ visibleForm });
+  };
 
-  render () {
-    const { isLoggedIn, isLoading, signup, login,fbLoggedIn } = this.props
-    const { visibleForm } = this.state
+  render() {
+    const {
+      isLoggedIn,
+      isLoading,
+      signup,
+      login,
+      fbLoggedIn,
+      googleLoggedIn
+    } = this.props;
+    const { visibleForm } = this.state;
     // The following style is responsible of the "bounce-up from bottom" animation of the form
-    const formStyle = (!visibleForm) ? { height: 0 } : { marginTop: 40 }
+    const formStyle = !visibleForm ? { height: 0 } : { marginTop: 40 };
     return (
       <View style={styles.container}>
-            
-            
         <Image
-          animation={'bounceIn'}
+          animation={"bounceIn"}
           duration={1200}
           delay={200}
-          ref={(ref) => this.logoImgRef = ref}
+          ref={ref => (this.logoImgRef = ref)}
           style={styles.logoImg}
           source={imgLogo}
         />
-        {(!visibleForm && !isLoggedIn) && (
-          <Opening
-            onCreateAccountPress={() => this._setVisibleForm('SIGNUP')}
-            onSignInPress={() => this._setVisibleForm('LOGIN')}
-            onFbLogin={fbLoggedIn}
-          />
-        )}
+        {!visibleForm &&
+          !isLoggedIn && (
+            <Opening
+              onCreateAccountPress={() => this._setVisibleForm("SIGNUP")}
+              onSignInPress={() => this._setVisibleForm("LOGIN")}
+              onFbLogin={fbLoggedIn}
+              onGoogleLogin={googleLoggedIn}
+            />
+          )}
         <KeyboardAvoidingView
           keyboardVerticalOffset={-100}
-          behavior={'padding'}
+          behavior={"padding"}
           style={[formStyle, styles.bottom]}
         >
-          {(visibleForm === 'SIGNUP') && (
+          {visibleForm === "SIGNUP" && (
             <SignupForm
-              ref={(ref) => this.formRef = ref}
-              onLoginLinkPress={() => this._setVisibleForm('LOGIN')}
+              ref={ref => (this.formRef = ref)}
+              onLoginLinkPress={() => this._setVisibleForm("LOGIN")}
               onSignupPress={signup}
               isLoading={isLoading}
             />
           )}
-          {(visibleForm === 'LOGIN') && (
-           
+          {visibleForm === "LOGIN" && (
             <LoginForm
-              ref={(ref) => this.formRef = ref}
-              onSignupLinkPress={() => this._setVisibleForm('SIGNUP')}
+              ref={ref => (this.formRef = ref)}
+              onSignupLinkPress={() => this._setVisibleForm("SIGNUP")}
               onLoginPress={login}
               isLoading={isLoading}
             />
-
           )}
         </KeyboardAvoidingView>
       </View>
-    )
+    );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
+    flexDirection: "column",
     width: metrics.DEVICE_WIDTH,
     height: metrics.DEVICE_HEIGHT,
     paddingTop: 24,
-    backgroundColor: 'white'
+    backgroundColor: "white"
   },
   logoImg: {
     flex: 1,
-    height: null,
+    height: metrics.DEVICE_HEIGHT,
     width: IMAGE_WIDTH,
-    alignSelf: 'center',
-    resizeMode: 'contain',
+    alignSelf: "center",
+    resizeMode: "contain",
     marginVertical: 30
   },
   bottom: {
     backgroundColor: Constants.appColor
   }
-})
+});

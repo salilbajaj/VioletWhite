@@ -104,6 +104,6 @@ var styles = StyleSheet.create({
   }
 });
 
-Navigation.registerComponent('AwesomeProject.Contact', () => Contact);
+Navigation.registerComponent('GoVioletWhite.Contact', () => Contact);
 module.exports = Contact;
 

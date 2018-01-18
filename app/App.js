@@ -14,53 +14,52 @@ var {
 import { Navigation } from "react-native-navigation";
 import { registerScreens } from "./screens";
 import menuIcon from "./assets/images/icon-home.png";
-import Constants from './common/Constants';
+import Constants from "./common/Constants";
 var Tabs = require("./components/Tabs");
 var Menu = require("./components/Menu");
 var Social = require("./components/Social");
 var Events = require("./components/Events");
 var Menu = require("./components/Menu");
-import Icon from 'react-native-vector-icons/FontAwesome';
-registerScreens();
+import Icon from "react-native-vector-icons/FontAwesome";
 
 Navigation.startTabBasedApp({
   tabs: [
     {
       label: "Social", // tab label as appears under the icon in iOS (optional)
-      screen: "AwesomeProject.Social", // unique ID registered with Navigation.registerScreen
-
-      icon: require("./assets/images/icon-nav.png"),
+      screen: "GoVioletWhite.Social", // unique ID registered with Navigation.registerScreen
+      icon: require("./assets/images/home.png"),
       title: "VioletWhite", // title of the screen as appears in the nav bar (optional)
       navigatorStyle: {
-        drawUnderNavBar: true,
         navBarTranslucent: true,
-          navBarButtonColor:'white',
-
-
+        navBarButtonColor: "white"
       }, // override the navigator style for the tab screen, see "Styling the navigator" below (optional),
       navigatorButtons: {} // override the nav buttons for the tab screen, see "Adding buttons to the navigator" below (optional)
     },
     {
-      
-      screen: "AwesomeProject.Upload", // unique ID registered with Navigation.registerScreen
+      label: "Upload",
+      screen: "GoVioletWhite.Upload", // unique ID registered with Navigation.registerScreen
       icon: require("./assets/images/plus.png"),
-     
       navigatorStyle: {
-
-        navBarHidden:true,
-
+        navBarHidden: true
       }, // override the navigator style for the tab screen, see "Styling the navigator" below (optional),
       navigatorButtons: {} // override the nav buttons for the tab screen, see "Adding buttons to the navigator" below (optional)
     },
     {
       label: "Events",
-      screen: "AwesomeProject.Events",
+      screen: "GoVioletWhite.Events",
       navigatorStyle: {
-        drawUnderNavBar: true,
-        navBarTranslucent: true,
-
+        navBarTranslucent: true
       },
       icon: require("./assets/images/events.png"),
+      title: "VioletWhite"
+    },
+    {
+      label: "Profile",
+      screen: "GoVioletWhite.Menu",
+      navigatorStyle: {
+        navBarTranslucent: true
+      },
+      icon: require("./assets/images/profile.png"),
       title: "VioletWhite"
     }
   ],
@@ -78,17 +77,7 @@ Navigation.startTabBasedApp({
   appStyle: {
     orientation: "portrait"
   },
-  drawer: {
-    // optional, add this if you want a side menu drawer in your app
-    left: {
-      // optional, define if you want a drawer from the left
-      screen: "AwesomeProject.Menu", // unique ID registered with Navigation.registerScreen
-      passProps: {} // simple serializable object that will pass as props to all top screens (optional)
-    },
-    animationType: "parallax",
-    icon: require("./assets/images/icon-nav.png"),
-    disableOpenGesture: false // optional, can the drawer be opened with a swipe instead of button
-  },
+
   passProps: {},
   animationType: "slide-down" // optional, add transition animation to root change: 'none', 'slide-down', 'fade'
 });
@@ -111,6 +100,3 @@ const styles = StyleSheet.create({
     marginBottom: 5
   }
 });
-
-Navigation.registerComponent("App", () => App);
-export let rootNavigator = null;

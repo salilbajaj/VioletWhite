@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TRACKING_ID</key>
+	<string>UA-108213694-1</string>
+	<key>CLIENT_ID</key>
+	<string>176436943209-2jfvhafpqe055i6pj8087joqmg9bglnb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.176436943209-2jfvhafpqe055i6pj8087joqmg9bglnb</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.wizvy.GoVioletWhite</string>
+	<key>PROJECT_ID</key>
+	<string>govioletwhite-182911</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<true></true>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<false></false>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:176436943209:ios:120810aae7f336d3</string>
+</dict>
+</plist>

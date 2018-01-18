@@ -23,33 +23,20 @@ import Dimensions from 'Dimensions';
 import FeedItem from './FeedItem';
 const devWidth=Dimensions.get('window').width;
 const devHeight=Dimensions.get('window').height;
+import Social from './Social';
+import YouTube from 'react-native-youtube';
+import style from './style';
+import TimeAgo from 'react-native-timeago';
 
-var Social = require('./Social');
-var YouTube = require('react-native-youtube');
-var style = require('./style');
-var TimeAgo = require('react-native-timeago');
+
 
 class Feed extends Component{
-  
-
-  
-  
   constructor(props) {
       super(props); 
         this.state = {
           loading:false,
           recData:props.pushEvent,
-    isReady: false,
-    status: null,
-    quality: null,
-    error: null,
-    isPlaying: true,
-    isLooping: true,
-    duration: 0,
-    currentTime: 0,
-    fullscreen: false,
-        modalVisible:false,
-        page:1
+    
       };
       
     }
