@@ -4,7 +4,7 @@
 //   Component
 // } = React
 // var {
-//   AppRegistry,
+
 //   StyleSheet,
 //   Text,
 //   View,
@@ -26,7 +26,7 @@
 // const SideMenu = require('react-native-side-menu');
 // class Tabs extends Component{
 //   constructor(props){
-//      console.log(props.navigation) 
+//      console.log(props.navigation)
 //       super(props);
 //       this.state = {
 //         selectedTab:'Social',
@@ -34,7 +34,7 @@
 //         sideOpen:false
 //       }
 //     }
-     
+
 //   static navigationOptions = props=>( {
 
 //     title: 'GO VIOLETWHITE',
@@ -45,11 +45,11 @@
 //      backgroundColor:'#fff',
 //    },
 //    headerLeft: <SideButton />
-  
+
 //  })
 //    check(){
 //     console.log('jn')
-//    } 
+//    }
 //  render(){
 //   var menu=<Menu />
 //   if(this.state.loggedIn){
@@ -57,18 +57,18 @@
 //       <Login />
 //       )
 //   }
-//   return(  
-    
+//   return(
+
 //     <SideMenu menu={menu} ref={(ref) => {
 //       sideMenu = ref
 //     }} isOpen={false}>
-            
-//     <TabBarIOS             
+
+//     <TabBarIOS
 //         unselectedTintColor="#333"
-//         tintColor="rgba(128,0,128,.6)"        
+//         tintColor="rgba(128,0,128,.6)"
 //         barTintColor="rgba(256,256,256,.4)">
 //         <TabBarIOS.Item
-//           title="Social"        
+//           title="Social"
 //          iconSize={20}
 //          selected={this.state.selectedTab === 'Social'}
 //           onPress={() => {
@@ -80,34 +80,33 @@
 //          <Social />
 //         </TabBarIOS.Item>
 //         <TabBarIOS.Item
-//           title="Ideas"          
-//          iconSize={20} 
+//           title="Ideas"
+//          iconSize={20}
 //           selected={this.state.selectedTab === 'Ideas'}
 //           onPress={() => {
 //             this.setState({
 //               selectedTab: 'Ideas',
 //             });
-//           }}       
+//           }}
 //             >
 //           <Ideas />
 //         </TabBarIOS.Item>
 //          <TabBarIOS.Item
-//           title="Events"           
-//          iconSize={20}        
+//           title="Events"
+//          iconSize={20}
 //             >
 //           <View>jvhv</View>
 //         </TabBarIOS.Item>
 //          <TabBarIOS.Item
-//           title="Contact" 
+//           title="Contact"
 //          iconSize={20}
 //           >
 //           <View>jvhv</View>
-//         </TabBarIOS.Item>       
-//       </TabBarIOS>    
-//       </SideMenu>  
+//         </TabBarIOS.Item>
+//       </TabBarIOS>
+//       </SideMenu>
 //       )
-//  }  
+//  }
 // }
-
 
 // module.exports = Tabs;

@@ -4,7 +4,7 @@
 //   Component
 // } = React
 // var {
-//   AppRegistry,
+
 //   StyleSheet,
 //   Text,
 //   View,
@@ -23,26 +23,22 @@
 // var style = require('./style');
 
 // class Row extends Component{
-  
 
-  
-  
 //   constructor(props) {
-//       super(props); 
+//       super(props);
 //       console.log(props)
 //       this.state={
 //         data:props
 //       }
-      
-     
+
 //     }
-    
+
 //  render(){
-  
-//   return(    
+
+//   return(
 //     <View>{this.state.data.type}</View>
 //       )
-//  }  
+//  }
 // }
 // var styles = StyleSheet.create({
 //    "bannerView": {
@@ -117,12 +113,10 @@
 //         "zIndex": 9999
 //     },
 //     loader:{
-//     flex: 1, 
+//     flex: 1,
 //     margin:10,
 //     justifyContent: 'center',
 //   },
 // });
 
 // module.exports = Row;
-
-

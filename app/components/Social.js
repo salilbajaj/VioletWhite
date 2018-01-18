@@ -4,7 +4,6 @@ var MessageBarAlert = require("react-native-message-bar").MessageBar;
 var MessageBarManager = require("react-native-message-bar").MessageBarManager;
 var { Component } = React;
 var {
-  AppRegistry,
   StyleSheet,
   Animated,
   Text,
@@ -34,7 +33,7 @@ import ImagePicker from "react-native-image-picker";
 import ImageResizer from "react-native-image-resizer";
 import RNFS from "react-native-fs";
 import * as Progress from "react-native-progress";
-import RNFetchBlob from "react-native-fetch-blob";
+
 import FeedItem from "./FeedItem";
 
 var YouTube = require("react-native-youtube");

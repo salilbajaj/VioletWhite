@@ -1,7 +1,6 @@
 import React from "react";
 var { Component } = React;
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,

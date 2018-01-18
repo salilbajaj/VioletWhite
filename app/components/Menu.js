@@ -2,7 +2,6 @@ var React = require("react");
 var ReactNative = require("react-native");
 var { Component } = React;
 var {
-  AppRegistry,
   StyleSheet,
   Text,
   View,

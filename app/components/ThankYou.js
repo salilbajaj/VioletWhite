@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -103,5 +102,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   }
 });
+Navigation.registerComponent("GoVioletWhite.ThankYou", () => ThankYou);
 
 export default ThankYou;

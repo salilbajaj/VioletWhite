@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -69,17 +70,11 @@
 		E19D0DEA2010BCBD00470A4A /* libthird-party.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C391761F92340D00F7952B /* libthird-party.a */; };
 		E19D0DEB2010BCBD00470A4A /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA51DF850E9000B6D8A /* libyoga.a */; };
 		E19D0DEC2010BCBD00470A4A /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA71DF850E9000B6D8A /* libyoga.a */; };
-		E19D0E512010BF8C00470A4A /* libRazorpayCheckout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E19D0E252010BF5D00470A4A /* libRazorpayCheckout.a */; };
-		E19D0E562010C71900470A4A /* Razorpay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19D0E552010C71900470A4A /* Razorpay.framework */; };
-		E19D0E572010C71900470A4A /* Razorpay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19D0E552010C71900470A4A /* Razorpay.framework */; };
-		E19D0E582010C72D00470A4A /* Razorpay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19D0E552010C71900470A4A /* Razorpay.framework */; };
-		E19D0E592010C72D00470A4A /* Razorpay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E19D0E552010C71900470A4A /* Razorpay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1C3918A1F92345F00F7952B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C391861F92345F00F7952B /* Bolts.framework */; };
 		E1C3918B1F92345F00F7952B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C391871F92345F00F7952B /* FBSDKCoreKit.framework */; };
 		E1C3918C1F92345F00F7952B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C391881F92345F00F7952B /* FBSDKLoginKit.framework */; };
 		E1C3918D1F92345F00F7952B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C391891F92345F00F7952B /* FBSDKShareKit.framework */; };
 		E1C3918E1F92356F00F7952B /* libRCTFBLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C391561F92340D00F7952B /* libRCTFBLogin.a */; };
-		E1C3918F1F92357800F7952B /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C3917E1F92340D00F7952B /* libRNFetchBlob.a */; };
 		E1C391901F92357F00F7952B /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C3914E1F92340D00F7952B /* libBVLinearGradient.a */; };
 		E1C391911F92358800F7952B /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C3917B1F92340D00F7952B /* libReactNativeNavigation.a */; };
 		E1C391921F92359000F7952B /* libRNUploader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C391811F92340D00F7952B /* libRNUploader.a */; };
@@ -314,13 +309,6 @@
 			remoteGlobalIDString = 9FD355121D3E4A2900D06170;
 			remoteInfo = RNGoogleSignin;
 		};
-		E19D0E242010BF5D00470A4A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52EC9EDC53AE47B7B9C41C3A /* RazorpayCheckout.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RazorpayCheckout;
-		};
 		E1C3914D1F92340D00F7952B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83D2EC58F9414F699272476B /* BVLinearGradient.xcodeproj */;
@@ -377,13 +365,6 @@
 			remoteGlobalIDString = D8AFADBD1BEE6F3F00A4592D;
 			remoteInfo = ReactNativeNavigation;
 		};
-		E1C3917D1F92340D00F7952B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7FEB79BEE2E74D6E96A66ED0 /* RNFetchBlob.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A15C300E1CD25C330074CB35;
-			remoteInfo = RNFetchBlob;
-		};
 		E1C391801F92340D00F7952B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 92A68ED932FE46FDBF631CD9 /* RNUploader.xcodeproj */;
@@ -428,7 +409,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E19D0E592010C72D00470A4A /* Razorpay.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,13 +450,11 @@
 		453B71C2B03C41BAA85935F2 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		4622643D048446C7945BB7B0 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		47FA91F7FABB42D89615F9EF /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
-		52EC9EDC53AE47B7B9C41C3A /* RazorpayCheckout.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RazorpayCheckout.xcodeproj; path = "../node_modules/react-native-razorpay/ios/RazorpayCheckout.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		63DCA09D51B746ED92675CE6 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		7168A45751364F268D909434 /* AddressBook.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7D31B1C3368D4B92A756A536 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		7FEB79BEE2E74D6E96A66ED0 /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		83D2EC58F9414F699272476B /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		92A68ED932FE46FDBF631CD9 /* RNUploader.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNUploader.xcodeproj; path = "../node_modules/react-native-uploader/RNUploader/RNUploader.xcodeproj"; sourceTree = "<group>"; };
@@ -495,7 +473,6 @@
 		E149AA211F96357F004AC891 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignInDependencies.framework; path = GoogleSdk/GoogleSignInDependencies.framework; sourceTree = "<group>"; };
 		E15520461FFABB3300469A32 /* GoogleSdk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GoogleSdk; sourceTree = "<group>"; };
 		E15520481FFABBED00469A32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E19D0E552010C71900470A4A /* Razorpay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Razorpay.framework; sourceTree = "<group>"; };
 		E1C391861F92345F00F7952B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		E1C391871F92345F00F7952B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E1C391881F92345F00F7952B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -509,7 +486,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E19D0E572010C71900470A4A /* Razorpay.framework in Frameworks */,
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,7 +494,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E19D0E512010BF8C00470A4A /* libRazorpayCheckout.a in Frameworks */,
 				E19D0DDF2010BCBD00470A4A /* libcxxreact.a in Frameworks */,
 				E19D0DE02010BCBD00470A4A /* libcxxreact.a in Frameworks */,
 				E19D0DE12010BCBD00470A4A /* libdouble-conversion.a in Frameworks */,
@@ -538,17 +513,14 @@
 				E1C391921F92359000F7952B /* libRNUploader.a in Frameworks */,
 				E1C391911F92358800F7952B /* libReactNativeNavigation.a in Frameworks */,
 				E1C391901F92357F00F7952B /* libBVLinearGradient.a in Frameworks */,
-				E1C3918F1F92357800F7952B /* libRNFetchBlob.a in Frameworks */,
 				E1C3918E1F92356F00F7952B /* libRCTFBLogin.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
-				E19D0E562010C71900470A4A /* Razorpay.framework in Frameworks */,
 				E149AA231F96357F004AC891 /* GoogleSignIn.framework in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				E1C3918B1F92345F00F7952B /* FBSDKCoreKit.framework in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
-				E19D0E582010C72D00470A4A /* Razorpay.framework in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				E1C3918D1F92345F00F7952B /* FBSDKShareKit.framework in Frameworks */,
 				E149AA241F96357F004AC891 /* GoogleSignInDependencies.framework in Frameworks */,
@@ -751,7 +723,6 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				C5370CC73DBC4B0EA23D2F3D /* RCTFBLogin.xcodeproj */,
-				7FEB79BEE2E74D6E96A66ED0 /* RNFetchBlob.xcodeproj */,
 				83D2EC58F9414F699272476B /* BVLinearGradient.xcodeproj */,
 				C3B615161ACE401FA9230B9F /* ReactNativeNavigation.xcodeproj */,
 				92A68ED932FE46FDBF631CD9 /* RNUploader.xcodeproj */,
@@ -763,7 +734,6 @@
 				35F42C7B4D18434EBB2CED2F /* RCTImageResizer.xcodeproj */,
 				3EEC6F3758FD46578DE3A925 /* RNGoogleSignin.xcodeproj */,
 				BDE77AE9038F4B6387023CC6 /* AirMaps.xcodeproj */,
-				52EC9EDC53AE47B7B9C41C3A /* RazorpayCheckout.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -780,7 +750,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				E19D0E552010C71900470A4A /* Razorpay.framework */,
 				E15520481FFABBED00469A32 /* GoogleService-Info.plist */,
 				E15520461FFABB3300469A32 /* GoogleSdk */,
 				E1C391851F92344300F7952B /* Frameworks */,
@@ -830,14 +799,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E19D0E1D2010BF5D00470A4A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E19D0E252010BF5D00470A4A /* libRazorpayCheckout.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		E1C3913B1F92340D00F7952B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -859,14 +820,6 @@
 			isa = PBXGroup;
 			children = (
 				E1C391811F92340D00F7952B /* libRNUploader.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E1C391411F92340D00F7952B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E1C3917E1F92340D00F7952B /* libRNFetchBlob.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1030,7 +983,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 610;
+				LastUpgradeCheck = 920;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -1108,10 +1061,6 @@
 					ProjectRef = 83D2EC58F9414F699272476B /* BVLinearGradient.xcodeproj */;
 				},
 				{
-					ProductGroup = E19D0E1D2010BF5D00470A4A /* Products */;
-					ProjectRef = 52EC9EDC53AE47B7B9C41C3A /* RazorpayCheckout.xcodeproj */;
-				},
-				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -1174,10 +1123,6 @@
 				{
 					ProductGroup = E1C391431F92340D00F7952B /* Products */;
 					ProjectRef = C3B615161ACE401FA9230B9F /* ReactNativeNavigation.xcodeproj */;
-				},
-				{
-					ProductGroup = E1C391411F92340D00F7952B /* Products */;
-					ProjectRef = 7FEB79BEE2E74D6E96A66ED0 /* RNFetchBlob.xcodeproj */;
 				},
 				{
 					ProductGroup = E1C391A81F92367E00F7952B /* Products */;
@@ -1421,13 +1366,6 @@
 			remoteRef = E149AA191F962D3A004AC891 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E19D0E252010BF5D00470A4A /* libRazorpayCheckout.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRazorpayCheckout.a;
-			remoteRef = E19D0E242010BF5D00470A4A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		E1C3914E1F92340D00F7952B /* libBVLinearGradient.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1482,13 +1420,6 @@
 			fileType = archive.ar;
 			path = libReactNativeNavigation.a;
 			remoteRef = E1C3917A1F92340D00F7952B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E1C3917E1F92340D00F7952B /* libRNFetchBlob.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNFetchBlob.a;
-			remoteRef = E1C3917D1F92340D00F7952B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		E1C391811F92340D00F7952B /* libRNUploader.a */ = {
@@ -1718,6 +1649,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoVioletWhite.app/GoVioletWhite";
 			};
@@ -1777,6 +1709,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoVioletWhite.app/GoVioletWhite";
 			};
@@ -2085,24 +2018,35 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2115,7 +2059,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2126,17 +2070,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2144,13 +2097,14 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2167,7 +2121,7 @@
 				00E356F71AD99517003FC87E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "GoVioletWhite" */ = {
 			isa = XCConfigurationList;
@@ -2176,7 +2130,7 @@
 				13B07F951A680F5B00A75B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "GoVioletWhite-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -2185,7 +2139,7 @@
 				2D02E4981E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "GoVioletWhite-tvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -2194,7 +2148,7 @@
 				2D02E49A1E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "GoVioletWhite" */ = {
 			isa = XCConfigurationList;
@@ -2203,7 +2157,7 @@
 				83CBBA211A601CBA00E9B192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

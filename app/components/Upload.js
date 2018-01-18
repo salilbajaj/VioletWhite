@@ -2,7 +2,6 @@ var React = require("react");
 var ReactNative = require("react-native");
 var { Component } = React;
 var {
-  AppRegistry,
   StyleSheet,
   Animated,
   Text,
@@ -277,7 +276,7 @@ class Upload extends Component {
       this.state.userToken;
     //var postData=new FormData();
     //postData.append('data',{uri: this.state.recImageUri,name: 'photo.png',filename :'imageName.png'})
-    //console.log(RNFetchBlob)
+
     let pic = {
       uri: this.state.recImageUri,
       name: "image1.png",

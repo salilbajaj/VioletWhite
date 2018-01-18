@@ -9,7 +9,6 @@ import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import fr.bamlab.rnimageresizer.ImageResizerPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.rnfs.RNFSPackage;
-import fr.bamlab.rncameraroll.CameraRollPackage;
 import com.inprogress.reactnativeyoutube.ReactNativeYouTube;
 import com.brentvatne.react.ReactVideoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -43,7 +42,6 @@ public class MainApplication extends Application implements ReactApplication {
             new ImageResizerPackage(),
             new ImagePickerPackage(),
             new RNFSPackage(),
-            new CameraRollPackage(),
             new ReactNativeYouTube(),
             new ReactVideoPackage(),
             new VectorIconsPackage(),

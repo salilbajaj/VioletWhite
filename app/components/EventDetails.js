@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -25,7 +24,7 @@ import Cache from "../common/Cache";
 import getRNDraftJSBlocks from "react-native-draftjs-render";
 import Moment from "moment";
 import MapView from "react-native-maps";
-import RazorpayCheckout from "react-native-razorpay";
+//import RazorpayCheckout from "react-native-razorpay";
 import ThankYou from "./ThankYou";
 
 const devWidth = Dimensions.get("window").width;
@@ -183,14 +182,14 @@ class EventDetails extends Component {
               },
               theme: { color: "#F37254" }
             };
-            RazorpayCheckout.open(options)
-              .then(data => {
-                this.donationReceived(item);
-              })
-              .catch(error => {
-                // handle failure
-                alert("Payment Failed. Please try again.");
-              });
+            // RazorpayCheckout.open(options)
+            //   .then(data => {
+            //     this.donationReceived(item);
+            //   })
+            //   .catch(error => {
+            //     // handle failure
+            //     alert("Payment Failed. Please try again.");
+            //   });
           }}
         >
           <Text style={{ color: "#fff", fontSize: 20, fontWeight: "400" }}>

@@ -139,7 +139,6 @@ dependencies {
     compile project(':react-native-image-resizer')
     compile project(':react-native-image-picker')
     compile project(':react-native-fs')
-    compile project(':rn-camera-roll')
     compile project(':react-native-youtube')
     compile project(':react-native-video')
     compile project(':react-native-vector-icons')

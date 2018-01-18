@@ -1,13 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+// /**
+//  * Sample React Native App
+//  * https://github.com/facebook/react-native
+//  * @flow
+//  */
 
 // import React, { Component } from "react";
-// import { AppRegistry, StyleSheet, Text, View } from "react-native";
-__STRESS_TEST__ = false;
-import App from "./app/App";
+
+// import App from "./app/App";
 // import Social from "./app/components/Social";
 // export default class GoVioletWhite extends Component {
 //   render() {
@@ -35,3 +34,6 @@ import App from "./app/App";
 // });
 
 // AppRegistry.registerComponent("GoVioletWhite", () => GoVioletWhite);
+
+__STRESS_TEST__ = false;
+import App from "./app/App";
