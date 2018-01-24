@@ -48,7 +48,7 @@ class Menu extends Component {
   }
   getUserDetails() {
     Cache.getUser(
-      function(response) {
+      function (response) {
         if (
           response &&
           response.token &&
@@ -64,7 +64,7 @@ class Menu extends Component {
       }.bind(this)
     );
   }
-  componentDidMount() {}
+  componentDidMount() { }
   gotoContact() {
     //     this.props.navigator.toggleDrawer({
     //   side: 'left', // the side of the drawer since you can have two, 'left' / 'right'
@@ -79,12 +79,39 @@ class Menu extends Component {
     //   animationType: 'none' // 'none' / 'slide-up' , appear animation for the modal (optional, default 'slide-up')
     // });
   }
+  gotoAbout() {
+    this.props.navigator.push({
+      screen: 'GoVioletWhite.About', // unique ID registered with Navigation.registerScreen
+      title: 'About Us', // navigation bar title of the pushed screen (optional)
+
+      passProps: {}, // Object that will be passed as props to the pushed screen (optional)
+      animated: true, // does the push have transition animation or does it happen immediately (optional)
+      animationType: 'fade', // 'fade' (for both) / 'slide-horizontal' (for android) does the push have different transition animation (optional)
+      backButtonTitle: '', // override the back button title (optional)
+      backButtonHidden: false, // hide the back button altogether (optional),
+      backButtonColor: '#fff',
+      navigatorStyle: {
+        navBarBackgroundColor: Constants.appColor
+      }, // override the navigator style for the pushed screen (optional)
+      navigatorButtons: {}, // override the nav buttons for the pushed screen (optional)
+      // enable peek and pop - commited screen will have `isPreview` prop set as true.
+      previewView: undefined, // react ref or node id (optional)
+      previewHeight: undefined, // set preview height, defaults to full height (optional)
+      previewCommit: true, // commit to push preview controller to the navigation stack (optional)
+      previewActions: [{ // action presses can be detected with the `PreviewActionPress` event on the commited screen.
+        id: '', // action id (required)
+        title: '', // action title (required)
+        style: undefined, // 'selected' or 'destructive' (optional)
+        actions: [], // list of sub-actions
+      }],
+    });
+  }
   logout() {
     this.props.navigator.switchToTab({
       tabIndex: 0
     });
     Cache.removeUser(
-      function(response) {
+      function (response) {
         if (response) {
           this.props.navigator.showModal({
             screen: "GoVioletWhite.Login", // unique ID registered with Navigation.registerScreen
@@ -159,7 +186,9 @@ class Menu extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.eachOptionLeft}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              this.gotoAbout();
+            }}>
               <Image
                 source={require("../assets/images/about.png")}
                 style={styles.menuIcon}

@@ -44,11 +44,11 @@ class Upload extends Component {
       loading: false,
       recData: null,
       loading: false,
-      width: 1600,
+      width: 1200,
       format: "JPEG",
       feedText: null,
-      quality: 90,
-      height: 1600,
+      quality: 70,
+      height: 800,
       feedText: null,
       gotImage: false,
       userToken: null,
@@ -68,7 +68,7 @@ class Upload extends Component {
   }
   componentDidMount() {
     Cache.getUser(
-      function(response) {
+      function (response) {
         if (
           response &&
           response.token &&
@@ -102,9 +102,7 @@ class Upload extends Component {
     // get image from image picker
 
     ImagePicker.showImagePicker(this.options, async response => {
-      this.setState({
-        loading: true
-      });
+
 
       if (response.didCancel) {
         return;
@@ -112,6 +110,10 @@ class Upload extends Component {
         return;
       } else if (response.customButton) {
         return;
+      } else {
+        this.setState({
+          loading: true
+        })
       }
       let { height, width, quality, format } = this.state;
       ImageResizer.createResizedImage(
@@ -202,6 +204,7 @@ class Upload extends Component {
         body: JSON.stringify(postData)
       })
         .then(response => {
+
           if (response) {
             return response.json();
           } else {
@@ -232,7 +235,7 @@ class Upload extends Component {
             // );
           }
         })
-        .catch(err => {});
+        .catch(err => { });
     } else if (this.state.gotImage) {
       this.setState({
         loading: true,
@@ -253,6 +256,7 @@ class Upload extends Component {
         body: JSON.stringify(postData)
       })
         .then(response => {
+          console.log(response)
           if (response) {
             return response.json();
           } else {
@@ -264,7 +268,7 @@ class Upload extends Component {
             this.postImageProcessing(result);
           }
         })
-        .catch(err => {});
+        .catch(err => { });
     }
   }
   postImageProcessing(data) {
@@ -291,6 +295,7 @@ class Upload extends Component {
     };
     fetch(api, config)
       .then(response => {
+        console.log(response)
         if (response) {
           return response.json();
         } else {
@@ -321,7 +326,7 @@ class Upload extends Component {
           });
         }
       })
-      .catch(err => {});
+      .catch(err => { });
   }
   render() {
     if (this.state.loading) {
@@ -365,8 +370,8 @@ class Upload extends Component {
               style={styles.upImage}
             />
           ) : (
-            <View />
-          )}
+              <View />
+            )}
         </View>
       </View>
     );

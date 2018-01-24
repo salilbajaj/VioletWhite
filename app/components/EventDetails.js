@@ -24,7 +24,7 @@ import Cache from "../common/Cache";
 import getRNDraftJSBlocks from "react-native-draftjs-render";
 import Moment from "moment";
 import MapView from "react-native-maps";
-//import RazorpayCheckout from "react-native-razorpay";
+import RazorpayCheckout from "react-native-razorpay";
 import ThankYou from "./ThankYou";
 
 const devWidth = Dimensions.get("window").width;
@@ -83,7 +83,7 @@ class EventDetails extends Component {
   }
   completed(item) {
     Cache.getUser(
-      function(response) {
+      function (response) {
         if (
           response &&
           response.token &&
@@ -126,18 +126,40 @@ class EventDetails extends Component {
     this.completed(this.state.recData);
   }
   donationReceived(data) {
-    this.props.navigator.showModal({
-      screen: "GoVioletWhite.ThankYou",
-      title: "Donation Received",
-      passProps: { data },
-      navigatorStyle: {
-        navBarTranslucent: true,
-        navBarTextColor: "#fff",
-        navBarBackgroundColor: "violet",
-        navBarHidden: true
-      },
-      animationType: "slide-up"
-    });
+    console.log(data)
+    console.log(this.props)
+    console.log(this.state.userInfo)
+    console.log(this.state.userToken)
+    fetch(Constants.URL.api + "payment/" + data.razorpay_payment_id + "/" + this.state.userInfo.id + "/" + this.props.item.id, {
+      method: "get"
+    })
+      .then(response => {
+        if (response) {
+          return response.json();
+        } else {
+          throw err;
+        }
+      })
+      .then(result => {
+        console.log(result)
+        if (result && result._id) {
+          this.props.navigator.showModal({
+            screen: "GoVioletWhite.ThankYou",
+            title: "Donation Received",
+            passProps: { data },
+            navigatorStyle: {
+              navBarTranslucent: true,
+              navBarTextColor: "#fff",
+              navBarBackgroundColor: "violet",
+              navBarHidden: true
+            },
+            animationType: "slide-up"
+          });
+        }
+
+      })
+      .catch(err => { });
+
   }
   _keyExtractor = (item, index) => item._id;
   _renderItem = ({ item }) => (
@@ -182,14 +204,14 @@ class EventDetails extends Component {
               },
               theme: { color: "#F37254" }
             };
-            // RazorpayCheckout.open(options)
-            //   .then(data => {
-            //     this.donationReceived(item);
-            //   })
-            //   .catch(error => {
-            //     // handle failure
-            //     alert("Payment Failed. Please try again.");
-            //   });
+            RazorpayCheckout.open(options)
+              .then(data => {
+                this.donationReceived(data);
+              })
+              .catch(error => {
+                // handle failure
+                alert("Payment Failed. Please try again.");
+              });
           }}
         >
           <Text style={{ color: "#fff", fontSize: 20, fontWeight: "400" }}>
@@ -209,23 +231,24 @@ class EventDetails extends Component {
       <View style={{ height: devHeight }}>
         <ScrollView style={styles.container}>
           <Image style={styles.image} source={{ uri: item.images.medium }}>
-            <View style={styles.backdropView}>
-              <TouchableOpacity
-                onPress={this.onModalClose}
-                style={{
-                  backgroundColor: "rgba(0,0,0,.2)",
-                  width: 40,
-                  height: 40,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginTop: 20,
-                  marginLeft: 10
-                }}
-              >
-                <Image style={{ width: 20, height: 20 }} source={back} />
-              </TouchableOpacity>
-            </View>
+
           </Image>
+          <View style={styles.backdropView}>
+            <TouchableOpacity
+              onPress={this.onModalClose}
+              style={{
+                backgroundColor: "rgba(0,0,0,.2)",
+                width: 40,
+                height: 40,
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: 20,
+                marginLeft: 10
+              }}
+            >
+              <Image style={{ width: 20, height: 20 }} source={back} />
+            </TouchableOpacity>
+          </View>
           <View style={styles.tile}>
             <View style={styles.textCont}>
               <Text style={{ fontSize: 20, fontWeight: "bold" }}>
@@ -376,14 +399,14 @@ class EventDetails extends Component {
               onPress={() => {
                 Linking.openURL(
                   "comgooglemaps://?daddr=" +
-                    this.state.lat +
-                    "," +
-                    this.state.lng +
-                    "&center=" +
-                    this.state.lat +
-                    "," +
-                    this.state.lng +
-                    "&zoom=14&views=traffic"
+                  this.state.lat +
+                  "," +
+                  this.state.lng +
+                  "&center=" +
+                  this.state.lat +
+                  "," +
+                  this.state.lng +
+                  "&zoom=14&views=traffic"
                 );
               }}
             >
@@ -491,7 +514,10 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "flex-start",
     width: devWidth,
-    height: devHeight / 2
+    height: devHeight / 2,
+    position: 'absolute',
+    top: 0,
+    left: 0
   },
   image: {
     width: devWidth,
@@ -505,7 +531,6 @@ const styles = StyleSheet.create({
   },
   headline: {
     fontSize: 20,
-
     backgroundColor: "rgba(0,0,0,0)",
     color: "#fff",
     fontWeight: "bold"

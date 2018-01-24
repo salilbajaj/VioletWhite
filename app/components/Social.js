@@ -85,8 +85,6 @@ class Social extends Component {
     if (event.id != "willDisappear" && event.id != "didDisappear") {
       this.state.eventArray.push(event);
     }
-
-    console.log(event);
     this.state.eventArray.forEach((event, index) => {
       if (event.id == "didAppear") {
         if (
@@ -120,7 +118,7 @@ class Social extends Component {
   }
   getUserDetails() {
     Cache.getUser(
-      function(response) {
+      function (response) {
         if (
           response &&
           response.token &&
@@ -166,7 +164,7 @@ class Social extends Component {
     });
 
     setTimeout(
-      function() {
+      function () {
         this.setState({ progress: this.state.progress + 0.4 * Math.random() });
       }.bind(this),
       500
@@ -376,7 +374,7 @@ class Social extends Component {
           });
         }
       })
-      .catch(err => {});
+      .catch(err => { });
   }
   loginResult(result) {
     if (result) {

@@ -54,7 +54,7 @@ class ThankYou extends Component {
         <View style={styles.smallConts2}>
           <TouchableOpacity
             onPress={() => {
-              Navigation.dismissModal({
+              Navigation.dismissAllModals({
                 animationType: "slide-down"
               });
             }}

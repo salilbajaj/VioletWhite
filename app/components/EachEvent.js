@@ -70,9 +70,7 @@ const EachEvent = ({ item, completed, backers }) => {
           </Text>
         </View>
         <View style={styles.eachInfo}>
-          <Text style={{ alignSelf: "flex-start" }}>
-            <TimeAgo style={styles.timeStyle} time={item.createdAt} />
-          </Text>
+          <Text style={{ alignSelf: "flex-start" }} />
         </View>
       </View>
     </View>

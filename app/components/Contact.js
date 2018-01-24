@@ -17,6 +17,7 @@ var {
   ScrollView
 } = ReactNative;
 import Dimensions from "Dimensions";
+import Constants from "../common/Constants";
 import { Navigation } from "react-native-navigation";
 const devWidth = Dimensions.get("window").width;
 const devHeight = Dimensions.get("window").height;
@@ -26,6 +27,10 @@ var Button = require("react-native-button");
 var RNUploader = NativeModules.RNUploader;
 
 class Contact extends Component {
+  static navigatorStyle = {
+    navBarTextColor: "#fff",
+    navBarBackgroundColor: Constants.appColor
+  };
   constructor(props) {
     super(props);
 
@@ -35,13 +40,13 @@ class Contact extends Component {
       images: []
     };
   }
-  componentWillMount() {}
-  componentDidMount() {}
+  componentWillMount() { }
+  componentDidMount() { }
   render() {
     return (
       <ScrollView style={styles.whiteContainer}>
         <Animated.View style={styles.uploadContainer}>
-          <View>assadas</View>
+          <View><Text>assadas</Text></View>
         </Animated.View>
       </ScrollView>
     );

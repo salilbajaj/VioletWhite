@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import { Text, View } from 'react-native-animatable'
-
-import CustomButton from '../../components/CustomButton'
+import Constants from "../../common/Constants";
+//import CustomButton from '../../components/CustomButton'
 import CustomTextInput from '../../components/CustomTextInput'
 import metrics from '../../config/metrics'
 
@@ -24,7 +24,7 @@ export default class SignupForm extends Component {
     }
   }
 
-  render () {
+  render() {
     const { email, password, fullName } = this.state
     const { isLoading, onLoginLinkPress, onSignupPress } = this.props
     const isValid = email !== '' && password !== '' && fullName !== ''
@@ -67,14 +67,19 @@ export default class SignupForm extends Component {
         </View>
         <View style={styles.footer}>
           <View ref={(ref) => this.buttonRef = ref} animation={'bounceIn'} duration={600} delay={400}>
-            <CustomButton
+            {/* <CustomButton
               onPress={() => onSignupPress(email, password, fullName)}
               isEnabled={isValid}
               isLoading={isLoading}
               buttonStyle={styles.createAccountButton}
               textStyle={styles.createAccountButtonText}
               text={'Create Account'}
-            />
+            /> */}
+            <TouchableOpacity
+              onPress={() => onSignupPress(email, password, fullName)}
+              style={styles.buttons}
+            ><Text style={{ color: Constants.appColor }}>Create Account</Text>
+            </TouchableOpacity>
           </View>
           <Text
             ref={(ref) => this.linkRef = ref}
@@ -98,6 +103,16 @@ const styles = StyleSheet.create({
   },
   form: {
     marginTop: 20
+  },
+  buttons: {
+    height: 37,
+    borderWidth: 1,
+    borderRadius: 3,
+    alignSelf: "stretch",
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "rgba(0, 0, 0, 0.1)",
+    backgroundColor: "#fff"
   },
   footer: {
     height: 100,

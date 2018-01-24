@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import { Text, View } from 'react-native-animatable'
-
-import CustomButton from '../../components/CustomButton'
+import Constants from "../../common/Constants";
+//import CustomButton from '../../components/CustomButton'
 import CustomTextInput from '../../components/CustomTextInput'
 import metrics from '../../config/metrics'
 
 export default class LoginForm extends Component {
-  
+
   state = {
     email: '',
     password: '',
@@ -24,7 +24,7 @@ export default class LoginForm extends Component {
     }
   }
 
-  render () {
+  render() {
     const { email, password } = this.state
     const { isLoading, onSignupLinkPress, onLoginPress } = this.props
     const isValid = email !== '' && password !== ''
@@ -58,14 +58,19 @@ export default class LoginForm extends Component {
         </View>
         <View style={styles.footer}>
           <View ref={(ref) => this.buttonRef = ref} animation={'bounceIn'} duration={600} delay={400}>
-            <CustomButton
+            {/* <CustomButton
               onPress={() => onLoginPress(email, password)}
               isEnabled={isValid}
               isLoading={isLoading}
               buttonStyle={styles.loginButton}
               textStyle={styles.loginButtonText}
               text={'Log In'}
-            />
+            /> */}
+            <TouchableOpacity
+              onPress={() => onLoginPress(email, password)}
+              style={styles.buttons}
+            ><Text style={{ color: Constants.appColor }}>Log In</Text>
+            </TouchableOpacity>
           </View>
           <Text
             ref={(ref) => this.linkRef = ref}
@@ -86,6 +91,16 @@ export default class LoginForm extends Component {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: metrics.DEVICE_WIDTH * 0.1
+  },
+  buttons: {
+    height: 37,
+    borderWidth: 1,
+    borderRadius: 3,
+    alignSelf: "stretch",
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "rgba(0, 0, 0, 0.1)",
+    backgroundColor: "#fff"
   },
   form: {
     marginTop: 20

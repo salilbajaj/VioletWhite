@@ -9,8 +9,11 @@ import EventDetails from "../components/EventDetails";
 import ThankYou from "../components/ThankYou";
 import Upload from "../components/Upload";
 import Comments from "../components/Comments";
+import About from "../components/About";
+import CustomButton from "../components/CustomButton";
 
-// register all screens of the app (including internal ones)
+
+// all screens of the app 
 export function registerScreens() {
   Navigation.registerComponent("GoVioletWhite.Social", () => Social);
   Navigation.registerComponent("GoVioletWhite.Events", () => Events);
@@ -21,7 +24,9 @@ export function registerScreens() {
     "GoVioletWhite.EventDetails",
     () => EventDetails
   );
+  Navigation.registerComponent("GoVioletWhite.About", () => About);
   Navigation.registerComponent("GoVioletWhite.ThankYou", () => ThankYou);
   Navigation.registerComponent("GoVioletWhite.Upload", () => Upload);
   Navigation.registerComponent("GoVioletWhite.Comments", () => Comments);
+  Navigation.registerComponent("GoVioletWhite.CustomButton", () => CustomButton);
 }

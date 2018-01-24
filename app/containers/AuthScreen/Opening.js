@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { Text, View } from "react-native-animatable";
 import Constants from "../../common/Constants";
-import CustomButton from "../../components/CustomButton";
+//import CustomButton from "../../components/CustomButton";
 import metrics from "../../config/metrics";
 var { FBLogin, FBLoginManager } = require("react-native-facebook-login");
 import FBLoginView from "../../common/FBloginView";
@@ -15,7 +15,7 @@ export default class Opening extends Component {
     this._signIn = this._signIn.bind(this);
   }
   componentDidMount() {
-    FBLoginManager.logout(data => {});
+    FBLoginManager.logout(data => { });
     this._setupGoogleSignin();
     this._signOut();
   }
@@ -32,7 +32,7 @@ export default class Opening extends Component {
       const user = await GoogleSignin.currentUserAsync();
 
       this.setState({ user });
-    } catch (err) {}
+    } catch (err) { }
   }
   _signIn() {
     GoogleSignin.signIn()
@@ -60,12 +60,11 @@ export default class Opening extends Component {
     return (
       <View style={styles.container}>
         <View animation={"zoomIn"} delay={600} duration={400}>
-          <CustomButton
-            text={"Create Account"}
+          <TouchableOpacity
             onPress={this.props.onCreateAccountPress}
-            buttonStyle={styles.createAccountButton}
-            textStyle={styles.createAccountButtonText}
-          />
+            style={styles.buttons}
+          ><Text style={{ color: '#fff' }}>Create Account</Text>
+          </TouchableOpacity>
         </View>
         <View
           style={styles.separatorContainer}
@@ -78,12 +77,14 @@ export default class Opening extends Component {
           <View style={styles.separatorLine} />
         </View>
         <View animation={"zoomIn"} delay={800} duration={400}>
-          <CustomButton
-            text={"Sign In"}
+          <TouchableOpacity
+            style={styles.buttons}
+
             onPress={this.props.onSignInPress}
-            buttonStyle={styles.signInButton}
-            textStyle={styles.signInButtonText}
-          />
+
+          >
+            <Text style={{ color: '#fff' }}>Sign In</Text>
+          </TouchableOpacity>
         </View>
         <View
           style={styles.separatorContainer}
@@ -113,19 +114,19 @@ export default class Opening extends Component {
               permissions={["email", "user_friends"]}
               loginBehavior={FBLoginManager.LoginBehaviors.Native}
               onLogin={this.props.onFbLogin}
-              onLogout={function() {
+              onLogout={function () {
                 _this.setState({ user: null });
               }}
               buttonView={<FBLoginView />}
-              onLoginFound={function(data) {
+              onLoginFound={function (data) {
                 _this.setState({ user: data.credentials });
               }}
-              onLoginNotFound={function() {
+              onLoginNotFound={function () {
                 _this.setState({ user: null });
               }}
-              onError={function(data) {}}
-              onCancel={function() {}}
-              onPermissionsMissing={function(data) {}}
+              onError={function (data) { }}
+              onCancel={function () { }}
+              onPermissionsMissing={function (data) { }}
             />
           </View>
           <View style={styles.separatorLine} />
@@ -146,6 +147,16 @@ export default class Opening extends Component {
 }
 
 const styles = StyleSheet.create({
+  buttons: {
+    height: 37,
+    borderWidth: 1,
+    borderRadius: 3,
+    alignSelf: "stretch",
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "rgba(0, 0, 0, 0.1)",
+    backgroundColor: Constants.appColor
+  },
   container: {
     flex: 1,
     marginHorizontal: metrics.DEVICE_WIDTH * 0.1,
